@@ -21,7 +21,7 @@ class MainViewModel @ViewModelInject constructor(
         fetchUsers()
     }
 
-    private fun fetchUsers() {
+    fun fetchUsers() {
         viewModelScope.launch {
             _users.postValue(Resource.loading(data = null))
             if (networkHelper.isNetworkConnected()) {
